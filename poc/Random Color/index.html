@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Color Button</title>
+  <style class="cp-pen-styles">
+    body {
+      font-size: 16px;
+      font-family: 'Roboto', 'Arial', sans-serif;
+      text-align: center;
+      background-color: #f8faff;
+    }
+  </style>
+</head>
+
+<body id="colorpad">
+  <h1>Color Button</h1>
+  <div class="css-script-ads" style="margin-top:50px" align="center">
+
+    <button onclick="setRandomColor()" class="buttonlayout">Random Color</button><br><br><br>
+    <button onclick="resetColor()" class="button"><span>Reset Color</span></button><br>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  </div>
+
+  <script type="text/javascript">
+    function getRandomColor() {
+      var letters = '0123456789ABCDEF';
+      var color = '#';
+      for (var i = 0; i < 6; i++) { //voert 6x deze loop uit
+        color += letters[Math.floor(Math.random() * 16)]; //pakt voor elke keer door de loop een letter en die voegt hij toe aan de variabele color
+        //math.floor rond af naar beneden, math.random maakt een random tussen de 0 en de 1.
+        //Voert eerst uit random getal tussen 0 en 1 keer 16 en dan afgerond naar heel getal naar beneden.
+      }
+      return color; //returnt de 6 cijfer/letterige code (hexcode)
+    }
+
+    function setRandomColor() {
+      $("#colorpad").css("background-color", getRandomColor()); //voert de getRandomColor(); uit en geeft de tag met de id #colorpad de css van de background color mee
+    }
+
+    function resetColor() {
+      document.getElementById("colorpad").style.backgroundColor = "#f8faff"; //backgroundcolor van id colorpad wordt gezet naar een hexcolorcode
+    }
+  </script>
+
+  <div class="as-console-wrapper">
+    <div class="as-console"></div>
+  </div </body> </html>

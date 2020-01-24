@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Javascript Klok - Digitaal</title>
+    <link href="https://fonts.googleapis.com/css?family=Orbitron&display=swap" rel="stylesheet">
+    <link href="klok.css" rel="stylesheet">
+
+  </head>
+  <body>
+      <div id="DigitaleKlok"></div>
+      <script type="text/javascript">
+
+        function geefTijd(){
+          var date = new Date();
+          var u = date.getHours(); //krijgt de waarde van het uur
+          var m = date.getMinutes(); //krijgt de waarde van de minuten
+          var s = date.getSeconds(); //krijgt de waarde van de seconden
+
+          u = (u < 10) ? "0" + u : u; //als u < 10 is wordt er een 0 bij voor de tijd gezet. Omdat ik wil dat de uren altijd 2 getalen zijn dus ipv 7 uur is het 07 uur.
+          m = (m < 10) ? "0" + m : m;
+          s = (s < 10) ? "0" + s : s;
+
+          var tijd = u + ":" + m + ":" + s; //schrijft de waardes van hierboven achter elkaar met een : ertussen.
+          document.getElementById("DigitaleKlok").innerText = tijd; //var tijd wordt in de html gezet met het id gitialeklok
+          // document.getElementById("DigitaleKlok").textContent = tijd;
+
+          setTimeout(geefTijd, 1000); //door deze timeout zorgt dat de code 1 seconden wacht en dan meteen weer de code uitvoert. Vaker is onnodig aangezien de klok toch maar per seconde gaat.
+        }
+        geefTijd(); //functie opnieuw aangeroepen zodat hij hem opnieuw uitvoert
+
+
+      </script>
+  </body>
+</html>

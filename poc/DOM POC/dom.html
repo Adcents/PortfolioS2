@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>DOM</title>
+    <style>
+      .kleur {
+        color: blue;
+      }
+    </style>
+    <script type="text/javascript">
+
+      window.onload = function() {
+        var heading = document.createElement("li"); //maakt een list item aan
+        var heading_text = document.createTextNode("deze li is zelf gemaakt met javascript"); //maakt een text node, deze wordt later verboven in het list item 'heading' gezet.
+        heading.appendChild(heading_text); //heading_text wordt hier in heading gezet
+        document.querySelector("ul").appendChild(heading); //doormiddel van een queryselector wordt ul gevonden op de pagina, daarin wordt heading gezet wat nu een list item is met tekst erin
+
+        var listitems = document.getElementsByTagName("li"); //pakt alle listitems
+        var test = Math.floor(Math.random() * listitems.length); //doet een random van 0 tot 1 keer het aantal listitems en rond het af naar beneden. Er wordt dus een random getal gemaakt was tussen de 0 en het aantal listitems.
+        document.getElementsByTagName("li")[test].classList.add("kleur"); //voegt de class kleur toe aan de list item gehaald uit de random waarde. 
+        //
+        // var element = document.getElementsByTagName("li")[4];
+        // element.classList.add("kleur");
+      };
+
+    </script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <img src="" alt="">
+        <nav>
+          <ul>
+            <li>hallohallohallohallohaloolasdnasifnaosni</li>
+            <li>asfoiansfioasnfiasundpanspdinsa</li>
+            <li>jnagoiubdoiufbadpfiuanpfiuapuif</li>
+            <li>asdgiuhdasopguhapdifnaspin</li>
+            <li>hallohallohallohallohaloolasdnasifnaosni</li>
+            <li>asfoiansfioasnfiasundpanspdinsa</li>
+            <li>jnagoiubdoiufbadpfiuanpfiuapuif</li>
+            <li>asdgiuhdasopguhapdifnaspin</li>
+          </ul>
+        </nav>
+        <!-- <p>ohnojoijmjnhiuojiklmnjbihuoijpnklm</p> -->
+      </header>
+    </div>
+  </body>
+</html>

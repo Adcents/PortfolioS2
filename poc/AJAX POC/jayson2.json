@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Jasper",
+    "geslacht" : "man",
+    "leeftijd" : "18",
+    "sport": {
+      "likes": ["basketbal", "tennis"]
+    }
+  },
+  {
+    "name": "Thupten",
+    "geslacht" : "man",
+    "leeftijd" : "22",
+    "sport": {
+      "likes": ["fitness", "roken"]
+    }
+  },
+  {
+    "name": "Krijn",
+    "geslacht" : "man",
+    "leeftijd" : "19",
+    "sport": {
+      "likes": ["golf", "geitenyoga"]
+    }
+  }
+]

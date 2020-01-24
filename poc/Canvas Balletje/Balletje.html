@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Canvas Follow Mouse</title>
+  <style>
+    canvas {
+      border: #333 10px solid;
+    }
+
+    body {
+      padding: 50px;
+    }
+  </style>
+</head>
+
+<body>
+  <canvas id="myCanvas" width="550px" height="350px"></canvas>
+
+  <script>
+    var canvas = document.querySelector("#myCanvas");
+    var context = canvas.getContext("2d");
+
+    var canvasPos = getPosition(canvas)
+    var mouseX = 0;
+    var mouseY = 0;
+
+    canvas.addEventListener("mousemove", setMousePosition, false); //initieerd de setMousePosition functie zodra de muis bewogen is
+
+    function setMousePosition(e) {
+      mouseX = e.clientX - canvasPos.x; //waardes van het event hierboven worden weggeschreven
+      mouseY = e.clientY - canvasPos.y; //haalt de canvaspositiewaarde ervan af zodat correcte muislocatie wordt gevonden in canvas.
+    }
+
+
+    function update() {
+      context.clearRect(0, 0, canvas.width, canvas.height);
+
+      //maakt het balletje, geeft het een kleur en vult het.
+      context.beginPath();
+      context.arc(mouseX, mouseY, 20, 0, 2 * Math.PI, true); //de locatie van het balletje wordt de getrackte locatie van de muis.
+      context.fillStyle = "#FF6A6A";
+      context.fill();
+
+      requestAnimationFrame(update);
+    }
+    update();
+
+    function getPosition(el) {
+      var xPosition = 0;
+      var yPosition = 0;
+
+      while (el) {
+        xPosition += (el.offsetLeft - el.scrollLeft + el.clientLeft);
+        yPosition += (el.offsetTop - el.scrollTop + el.clientTop);
+        el = el.offsetParent;
+      }
+      return {
+        x: xPosition,
+        y: yPosition
+      };
+    }
+
+  </script>
+
+</body>

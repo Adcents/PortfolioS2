@@ -1,0 +1,11 @@
+body {
+  background-color: darkgrey;
+  align-items: center;
+}
+#DigitaleKlok {
+  font-family: 'digital-7';
+  font-size: 200px;
+  color: cyan;
+  text-align: center;
+
+}

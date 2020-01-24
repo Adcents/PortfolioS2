@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Sjors",
+    "geslacht" : "man",
+    "leeftijd" : "21",
+    "sport": {
+      "likes": ["basketbal", "tennis"]
+    }
+  },
+  {
+    "name": "Thijs",
+    "geslacht" : "man",
+    "leeftijd" : "22",
+    "sport": {
+      "likes": ["basketbal"]
+    }
+  },
+  {
+    "name": "Floor",
+    "geslacht" : "vrouw",
+    "leeftijd" : "20",
+    "sport": {
+      "likes": ["fitness", "yoga"]
+    }
+  }
+]
